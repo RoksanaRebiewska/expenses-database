@@ -6,10 +6,12 @@ import './Data.css';
 
 const Data = () => {
   const [itemsData, setItemsData] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   const getDataHandler = useCallback(async function () {
     try {
+      setLoading(true);
       const response = await fetch(
         'https://database-1-b4a45-default-rtdb.firebaseio.com/expenses.json'
       );
@@ -28,6 +30,7 @@ const Data = () => {
     } catch (error) {
       setError(error.message);
     }
+    setLoading(false);
   }, []);
 
   useEffect(() => {
@@ -57,7 +60,7 @@ const Data = () => {
     <>
       <section className="data__container">
         <Form onAdd={addHandler} />
-        <List data={itemsData} onError={error} />
+        <List data={itemsData} onError={error} onLoading={loading} />
       </section>
     </>
   );

@@ -2,7 +2,7 @@
   margin: 0 50px;
 }
 
-form {
+.add-expense__container form {
   width: 600px;
   margin: 20px auto;
   background: linear-gradient(45deg, rgb(172, 223, 243), rgb(214, 235, 243));
@@ -20,7 +20,7 @@ form {
     margin: 0 20px;
   }
   
-  form {
+  .add-expense__container form {
     width: auto;
   }
 }

@@ -25,3 +25,15 @@ ul {
   text-align: right;
   font-size: 2rem;
 }
+
+.expenses__container form {
+  width: 200px;
+  font-size: 1rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.expenses__container form select {
+  width: 200px;
+}
