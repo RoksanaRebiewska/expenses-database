@@ -1,0 +1,27 @@
+.expenses__container {
+  margin: 0 50px;
+}
+
+ul {
+  width: 600px;
+  margin: 20px auto;
+  background: linear-gradient(45deg, rgb(172, 223, 243), rgb(214, 235, 243));
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px rgb(80, 79, 79);
+  padding: 20px;
+}
+
+@media (max-width: 992px) {
+  .expenses__container {
+    margin: 0 20px;
+  }
+  
+  ul {
+    width: auto;
+  }
+}
+
+.sum {
+  text-align: right;
+  font-size: 2rem;
+}

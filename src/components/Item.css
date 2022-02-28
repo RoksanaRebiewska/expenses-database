@@ -1,0 +1,7 @@
+li {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  align-items: center;
+}
