@@ -81,7 +81,7 @@ const Form = (props) => {
         <input
           type="date"
           ref={dateRef}
-          min="2021-01-01"
+          min="2022-01-01"
           max="2022-12-31"
           onChange={onDateChangeHandler}
         />

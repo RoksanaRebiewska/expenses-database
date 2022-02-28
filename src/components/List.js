@@ -17,7 +17,12 @@ const List = (props) => {
       : props.data.filter((item) => item.category === selectedCategory);
 
   const finalData = filteredData.map((item) => (
-    <Item category={item.category} price={item.price} date={item.date} />
+    <Item
+      category={item.category}
+      price={item.price}
+      date={item.date}
+      key={item.id}
+    />
   ));
 
   let content = <p>No expenses yet</p>;

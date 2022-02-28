@@ -31,9 +31,23 @@ ul {
   font-size: 1rem;
   text-align: left;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .expenses__container form select {
   width: 200px;
+  margin-right: 20px;
+}
+
+@media (max-width: 992px) {
+  .expenses__container form {
+    flex-direction: column;
+    width: 200px;
+    margin: auto;
+    text-align: center;
+  }
+
+  .expenses__container form select {
+    margin-right: 0;
+  }
 }
