@@ -1,7 +1,22 @@
 li {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 3fr) 1fr;
   text-align: center;
   align-items: center;
+}
+
+li button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+  background: rgb(4, 4, 26);
+  color: #fff;
+  transition: all .3s linear;
+}
+
+li button:hover {
+  cursor: pointer;
+  background: rgb(124, 11, 11);
 }

@@ -62,7 +62,7 @@ const Form = (props) => {
       <h2>Add your expense</h2>
       <form onSubmit={submitHandler}>
         <label htmlFor="category">Category</label>
-        <select name="category" ref={categoryRef}>
+        <select name="category" id="category" ref={categoryRef}>
           <option value="Food">Food</option>
           <option value="Home">Home</option>
           <option value="Others">Others</option>
@@ -70,8 +70,11 @@ const Form = (props) => {
         <label htmlFor="price">Price (in &#8364;)</label>
         <input
           type="number"
+          id="price"
+          name="date"
           ref={priceRef}
           min="0"
+          step="0.1"
           onChange={onPriceChangeHandler}
         />
         {submittingForm && priceEmptyError ? (
@@ -80,6 +83,8 @@ const Form = (props) => {
         <label htmlFor="date">Date</label>
         <input
           type="date"
+          id="date"
+          name="date"
           ref={dateRef}
           min="2022-01-01"
           max="2022-12-31"

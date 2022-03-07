@@ -60,7 +60,12 @@ const Data = () => {
     <>
       <section className="data__container">
         <Form onAdd={addHandler} />
-        <List data={itemsData} onError={error} onLoading={loading} />
+        <List
+          data={itemsData}
+          onError={error}
+          onLoading={loading}
+          onRemove={getDataHandler}
+        />
       </section>
     </>
   );

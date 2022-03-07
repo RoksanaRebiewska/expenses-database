@@ -11,6 +11,19 @@ const List = (props) => {
     setSelectedCategory(event.target.value);
   };
 
+  async function removeHandler(id) {
+    const confirmation = window.confirm('Are you sure you want to delete?');
+    if (confirmation) {
+      await fetch(
+        `https://database-1-b4a45-default-rtdb.firebaseio.com/expenses/${id}.json`,
+        { method: 'DELETE' }
+      );
+      props.onRemove();
+    } else {
+      return;
+    }
+  }
+
   const filteredData =
     selectedCategory === 'All'
       ? props.data
@@ -22,6 +35,7 @@ const List = (props) => {
       price={item.price}
       date={item.date}
       key={item.id}
+      remove={() => removeHandler(item.id)}
     />
   ));
 
@@ -49,7 +63,8 @@ const List = (props) => {
             .map((price) => price.price)
             .reduce((prevVal, curVal) => {
               return +prevVal + +curVal;
-            })}
+            })
+            .toFixed(2)}
           &nbsp;&#8364;
         </p>
       </>

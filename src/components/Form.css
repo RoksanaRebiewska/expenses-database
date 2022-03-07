@@ -11,7 +11,7 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  border-radius: 20px;
+  border-radius: 10px;
   box-shadow: 5px 5px 10px rgb(80, 79, 79);
 }
 
@@ -33,9 +33,7 @@ form select, form input, form button {
   border: none;
   padding: 10px;
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 @media (max-width: 992px) {
