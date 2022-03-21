@@ -35,7 +35,7 @@ const Data = () => {
 
   useEffect(() => {
     getDataHandler();
-  }, [getDataHandler]);
+  }, []);
 
   async function addHandler(data) {
     try {

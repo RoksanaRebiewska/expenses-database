@@ -56,15 +56,19 @@ const List = (props) => {
           onSelectedFilter={selectedCategory}
           onChangingFilter={selectedCategoryHandler}
         />
-        <ul>{finalData}</ul>
+        <ul>{filteredData.length > 0 ? finalData : <p>No expenses yet</p>}</ul>
         <p className="sum">
           Sum:&nbsp;
-          {filteredData
-            .map((price) => price.price)
-            .reduce((prevVal, curVal) => {
-              return +prevVal + +curVal;
-            })
-            .toFixed(2)}
+          {filteredData.length > 1
+            ? filteredData
+                .map((price) => price.price)
+                .reduce((prevVal, curVal) => {
+                  return +prevVal + +curVal;
+                })
+                .toFixed(2)
+            : filteredData.length === 1
+            ? filteredData[0].price
+            : '0'}
           &nbsp;&#8364;
         </p>
       </>
