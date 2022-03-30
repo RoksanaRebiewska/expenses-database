@@ -13,7 +13,7 @@ const Data = () => {
     try {
       setLoading(true);
       const response = await fetch(
-        'https://database-1-b4a45-default-rtdb.firebaseio.com/expenses.json'
+        'https://database-4123d-default-rtdb.firebaseio.com/expenses.json'
       );
 
       const data = await response.json();
@@ -40,7 +40,7 @@ const Data = () => {
   async function addHandler(data) {
     try {
       const response = await fetch(
-        'https://database-1-b4a45-default-rtdb.firebaseio.com/expenses.json',
+        'https://database-4123d-default-rtdb.firebaseio.com/expenses.json',
         {
           method: 'POST',
           body: JSON.stringify(data),

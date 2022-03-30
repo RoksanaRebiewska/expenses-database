@@ -15,7 +15,7 @@ const List = (props) => {
     const confirmation = window.confirm('Are you sure you want to delete?');
     if (confirmation) {
       await fetch(
-        `https://database-1-b4a45-default-rtdb.firebaseio.com/expenses/${id}.json`,
+        `https://database-4123d-default-rtdb.firebaseio.com/expenses/${id}.json`,
         { method: 'DELETE' }
       );
       props.onRemove();
