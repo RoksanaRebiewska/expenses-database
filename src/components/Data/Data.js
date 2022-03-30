@@ -1,8 +1,8 @@
 import { useState, useEffect, useCallback } from 'react';
 
-import Form from './Form';
-import List from './List';
-import './Data.css';
+import Form from '../Form/Form';
+import List from '../List/List';
+import classes from './Data.module.scss';
 
 const Data = () => {
   const [itemsData, setItemsData] = useState([]);
@@ -58,7 +58,7 @@ const Data = () => {
 
   return (
     <>
-      <section className="data__container">
+      <section className={classes.data__container}>
         <Form onAdd={addHandler} />
         <List
           data={itemsData}

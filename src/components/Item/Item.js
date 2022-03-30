@@ -1,4 +1,4 @@
-import './Item.css';
+import classes from './Item.module.scss';
 
 const Item = (props) => {
   const price = `${parseFloat(props.price).toFixed(2)}`;

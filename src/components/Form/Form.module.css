@@ -1,0 +1,64 @@
+.add_expense__container {
+  margin: 0 50px;
+}
+@media (max-width: 992px) {
+  .add_expense__container {
+    margin: 0 20px;
+  }
+}
+.add_expense__container form {
+  width: 600px;
+  margin: 20px auto;
+  background: linear-gradient(45deg, #acdff3, #d6ebf3);
+  font-size: 2rem;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #504f4f;
+}
+@media (max-width: 992px) {
+  .add_expense__container form {
+    width: auto;
+  }
+}
+.add_expense__container form select, .add_expense__container form input, .add_expense__container form button {
+  width: 400px;
+  margin: 20px auto;
+  background: white;
+  font-size: 1rem;
+  border: none;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+@media (max-width: 992px) {
+  .add_expense__container form select, .add_expense__container form input, .add_expense__container form button {
+    width: 200px;
+  }
+}
+.add_expense__container form button {
+  background: #72d1f7;
+  border-radius: 20px;
+  border: 1px solid #000;
+  padding: 10px;
+  color: #000;
+  transition: all 0.3s linear;
+}
+.add_expense__container form button:hover {
+  cursor: pointer;
+  background: #1c94c4;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.error_text {
+  font-size: 1rem;
+  color: red;
+  width: 400px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/*# sourceMappingURL=Form.module.css.map */

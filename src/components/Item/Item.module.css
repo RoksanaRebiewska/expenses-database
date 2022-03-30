@@ -5,18 +5,18 @@ li {
   text-align: center;
   align-items: center;
 }
-
 li button {
   width: 20px;
   height: 20px;
   border-radius: 50%;
   border: none;
-  background: rgb(4, 4, 26);
+  background: #04041a;
   color: #fff;
-  transition: all .3s linear;
+  transition: all 0.3s linear;
 }
-
 li button:hover {
   cursor: pointer;
-  background: rgb(124, 11, 11);
+  background: #7c0b0b;
 }
+
+/*# sourceMappingURL=Item.module.css.map */

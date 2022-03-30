@@ -7,11 +7,6 @@ body {
   margin: 50px auto;
 }
 
-code {
-  font-family: 'Roboto', sans-serif;
-}
-
-
 @media (max-width: 992px) {
   h2 {
     text-align: center;

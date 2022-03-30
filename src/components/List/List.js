@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import './List.css';
-import Item from './Item';
-import FilterForm from './FilterForm';
+import classes from './List.module.scss';
+import Item from '../Item/Item';
+import FilterForm from '../FilterForm/FilterForm';
 
 const List = (props) => {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -57,7 +57,7 @@ const List = (props) => {
           onChangingFilter={selectedCategoryHandler}
         />
         <ul>{filteredData.length > 0 ? finalData : <p>No expenses yet</p>}</ul>
-        <p className="sum">
+        <p className={classes.sum}>
           Sum:&nbsp;
           {filteredData.length > 1
             ? filteredData
@@ -76,7 +76,7 @@ const List = (props) => {
   }
 
   return (
-    <div className="expenses__container">
+    <div className={classes.expenses__container}>
       <h2>List of expenses</h2>
       {content}
     </div>
