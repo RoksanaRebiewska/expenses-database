@@ -1,16 +1,13 @@
+@use './base';
+
 body {
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: rgb(237, 240, 241);
+  background: base.$background;
   max-width: 1500px;
   margin: 50px auto;
 }
-
-code {
-  font-family: 'Roboto', sans-serif;
-}
-
 
 @media (max-width: 992px) {
   h2 {

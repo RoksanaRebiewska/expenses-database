@@ -1,8 +1,8 @@
 import { useState, useRef } from 'react';
 
-import './Form.css';
+import classes from './Form.module.css';
 
-const Form = (props) => {
+const Form = ({ onAdd }) => {
   const [priceEmptyError, setPriceEmptyError] = useState(false);
   const [dateEmptyError, setDateEmptyError] = useState(false);
   const [submittingForm, setSubmittingForm] = useState(false);
@@ -43,7 +43,7 @@ const Form = (props) => {
 
     setSubmittingForm(false);
 
-    props.onAdd(data);
+    onAdd(data);
 
     priceRef.current.value = '';
     dateRef.current.value = '';
@@ -58,7 +58,7 @@ const Form = (props) => {
   };
 
   return (
-    <div className="add-expense__container">
+    <div className={classes.add_expense__container}>
       <h2>Add your expense</h2>
       <form onSubmit={submitHandler}>
         <label htmlFor="category">Category</label>
@@ -78,7 +78,7 @@ const Form = (props) => {
           onChange={onPriceChangeHandler}
         />
         {submittingForm && priceEmptyError ? (
-          <p className="error-text">Please set price</p>
+          <p className={classes.error_text}>Please set price</p>
         ) : null}
         <label htmlFor="date">Date</label>
         <input
@@ -91,7 +91,7 @@ const Form = (props) => {
           onChange={onDateChangeHandler}
         />
         {submittingForm && dateEmptyError ? (
-          <p className="error-text">Please set date</p>
+          <p className={classes.error_text}>Please set date</p>
         ) : null}
         <button type="submit">Add</button>
       </form>

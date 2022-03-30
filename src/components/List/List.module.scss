@@ -1,0 +1,53 @@
+@use '../../base';
+
+.expenses__container {
+  padding: 0 50px;
+
+  @media (max-width: 992px) {
+      padding: 0 20px;
+    }
+
+  ul {
+    width: 600px;
+    margin: 20px auto;
+    background: linear-gradient(45deg, base.$primary-mid-blue, base.$primary-light-blue);
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px base.$grey-light;
+    padding: 20px;
+
+    @media (max-width: 992px) {
+      width: auto;
+    }
+  }
+
+  form {
+    width: 200px;
+    font-size: 1rem;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+
+    @media (max-width: 992px) {
+        flex-direction: column;
+        width: 200px;
+        margin: auto;
+        text-align: center;
+      }
+
+    select {
+      width: 200px;
+      margin-right: 20px;
+
+      @media (max-width: 992px) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .sum {
+    text-align: right;
+    font-size: 2rem;
+  }
+}
+
+
