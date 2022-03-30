@@ -1,14 +1,14 @@
-import classes from './Item.module.scss';
+import classes from './Item.module.css';
 
-const Item = (props) => {
-  const price = `${parseFloat(props.price).toFixed(2)}`;
+const Item = ({ category, date, price, remove }) => {
+  const formatedPrice = `${parseFloat(price).toFixed(2)}`;
 
   return (
     <li>
-      <h3>{props.category}</h3>
-      <p>{props.date}</p>
-      <p>{price} &#8364;</p>
-      <button onClick={props.remove}>&#10006;</button>
+      <h3>{category}</h3>
+      <p>{date}</p>
+      <p>{formatedPrice} &#8364;</p>
+      <button onClick={remove}>&#10006;</button>
     </li>
   );
 };

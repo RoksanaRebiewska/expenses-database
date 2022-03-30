@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 
 import Form from '../Form/Form';
 import List from '../List/List';
-import classes from './Data.module.scss';
+import classes from './Data.module.css';
 
 const Data = () => {
   const [itemsData, setItemsData] = useState([]);
@@ -12,9 +12,7 @@ const Data = () => {
   const getDataHandler = useCallback(async function () {
     try {
       setLoading(true);
-      const response = await fetch(
-        'https://database-4123d-default-rtdb.firebaseio.com/expenses.json'
-      );
+      const response = await fetch(`${process.env.REACT_APP_API_KEY}.json`);
 
       const data = await response.json();
       const expenses = [];
@@ -39,16 +37,13 @@ const Data = () => {
 
   async function addHandler(data) {
     try {
-      const response = await fetch(
-        'https://database-4123d-default-rtdb.firebaseio.com/expenses.json',
-        {
-          method: 'POST',
-          body: JSON.stringify(data),
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        }
-      );
+      const response = await fetch(`${process.env.REACT_APP_API_KEY}.json`, {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
       await response.json();
       getDataHandler();
     } catch (error) {

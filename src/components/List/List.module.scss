@@ -1,3 +1,5 @@
+@use '../../base';
+
 .expenses__container {
   padding: 0 50px;
 
@@ -8,9 +10,9 @@
   ul {
     width: 600px;
     margin: 20px auto;
-    background: linear-gradient(45deg, rgb(172, 223, 243), rgb(214, 235, 243));
+    background: linear-gradient(45deg, base.$primary-mid-blue, base.$primary-light-blue);
     border-radius: 10px;
-    box-shadow: 5px 5px 10px rgb(80, 79, 79);
+    box-shadow: 5px 5px 10px base.$grey-light;
     padding: 20px;
 
     @media (max-width: 992px) {

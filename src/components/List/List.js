@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-import classes from './List.module.scss';
+import classes from './List.module.css';
 import Item from '../Item/Item';
 import FilterForm from '../FilterForm/FilterForm';
 
-const List = (props) => {
+const List = ({ onRemove, data, onError, onLoading }) => {
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   const selectedCategoryHandler = (event) => {
@@ -14,11 +14,10 @@ const List = (props) => {
   async function removeHandler(id) {
     const confirmation = window.confirm('Are you sure you want to delete?');
     if (confirmation) {
-      await fetch(
-        `https://database-4123d-default-rtdb.firebaseio.com/expenses/${id}.json`,
-        { method: 'DELETE' }
-      );
-      props.onRemove();
+      await fetch(`${process.env.REACT_APP_API_KEY}/${id}.json`, {
+        method: 'DELETE',
+      });
+      onRemove();
     } else {
       return;
     }
@@ -26,8 +25,8 @@ const List = (props) => {
 
   const filteredData =
     selectedCategory === 'All'
-      ? props.data
-      : props.data.filter((item) => item.category === selectedCategory);
+      ? data
+      : data.filter((item) => item.category === selectedCategory);
 
   const finalData = filteredData.map((item) => (
     <Item
@@ -41,15 +40,15 @@ const List = (props) => {
 
   let content = <p>No expenses yet</p>;
 
-  if (props.onError) {
-    content = <p>{props.onError}</p>;
+  if (onError) {
+    content = <p>{onError}</p>;
   }
 
-  if (props.onLoading) {
+  if (onLoading) {
     content = <p>Loading...</p>;
   }
 
-  if (!props.onError && !props.onLoading && props.data.length > 0) {
+  if (!onError && !onLoading && data.length > 0) {
     content = (
       <>
         <FilterForm

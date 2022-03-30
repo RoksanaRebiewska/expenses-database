@@ -1,3 +1,5 @@
+@use '../../base';
+
 li {
   list-style: none;
   display: grid;
@@ -10,13 +12,13 @@ li {
     height: 20px;
     border-radius: 50%;
     border: none;
-    background: rgb(4, 4, 26);
-    color: #fff;
+    background: base.$grey-dark;
+    color:  base.$white;
     transition: all .3s linear;
 
     &:hover {
       cursor: pointer;
-      background: rgb(124, 11, 11);
+      background: base.$red-dark;
     }
   }
 }

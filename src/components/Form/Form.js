@@ -1,8 +1,8 @@
 import { useState, useRef } from 'react';
 
-import classes from './Form.module.scss';
+import classes from './Form.module.css';
 
-const Form = (props) => {
+const Form = ({ onAdd }) => {
   const [priceEmptyError, setPriceEmptyError] = useState(false);
   const [dateEmptyError, setDateEmptyError] = useState(false);
   const [submittingForm, setSubmittingForm] = useState(false);
@@ -43,7 +43,7 @@ const Form = (props) => {
 
     setSubmittingForm(false);
 
-    props.onAdd(data);
+    onAdd(data);
 
     priceRef.current.value = '';
     dateRef.current.value = '';
