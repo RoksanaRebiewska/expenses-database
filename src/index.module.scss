@@ -1,7 +1,7 @@
 @use './base';
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: base.$primary-font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: base.$background;

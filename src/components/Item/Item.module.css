@@ -11,7 +11,7 @@ li button {
   border-radius: 50%;
   border: none;
   background: #04041a;
-  color: #fff;
+  color: white;
   transition: all 0.3s linear;
 }
 li button:hover {

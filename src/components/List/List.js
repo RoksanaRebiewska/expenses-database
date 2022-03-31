@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import ApiService from '../../Api.service';
+
 import classes from './List.module.css';
 import Item from '../Item/Item';
 import FilterForm from '../FilterForm/FilterForm';
@@ -11,17 +13,15 @@ const List = ({ onRemove, data, onError, onLoading }) => {
     setSelectedCategory(event.target.value);
   };
 
-  async function removeHandler(id) {
+  const removeHandler = async (id) => {
     const confirmation = window.confirm('Are you sure you want to delete?');
     if (confirmation) {
-      await fetch(`${process.env.REACT_APP_API_KEY}/${id}.json`, {
-        method: 'DELETE',
-      });
+      await ApiService.httpDelete(id);
       onRemove();
     } else {
       return;
     }
-  }
+  };
 
   const filteredData =
     selectedCategory === 'All'

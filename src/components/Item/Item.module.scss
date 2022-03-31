@@ -10,7 +10,7 @@ li {
   button {
     width: 20px;
     height: 20px;
-    border-radius: 50%;
+    border-radius: base.$border-circle;
     border: none;
     background: base.$grey-dark;
     color:  base.$white;

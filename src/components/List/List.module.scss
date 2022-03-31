@@ -11,7 +11,7 @@
     width: 600px;
     margin: 20px auto;
     background: linear-gradient(45deg, base.$primary-mid-blue, base.$primary-light-blue);
-    border-radius: 10px;
+    border-radius: base.$border-small;
     box-shadow: 5px 5px 10px base.$grey-light;
     padding: 20px;
 

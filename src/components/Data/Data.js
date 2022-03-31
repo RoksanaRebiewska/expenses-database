@@ -1,5 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 
+import ApiService from '../../Api.service';
+
 import Form from '../Form/Form';
 import List from '../List/List';
 import classes from './Data.module.css';
@@ -9,21 +11,12 @@ const Data = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const getDataHandler = useCallback(async function () {
+  const getDataHandler = useCallback(async () => {
     try {
       setLoading(true);
-      const response = await fetch(`${process.env.REACT_APP_API_KEY}.json`);
 
-      const data = await response.json();
-      const expenses = [];
-      for (const key in data) {
-        expenses.push({
-          category: data[key].category,
-          price: data[key].price,
-          date: data[key].date,
-          id: key,
-        });
-      }
+      const expenses = await ApiService.httpGet();
+
       setItemsData(expenses);
     } catch (error) {
       setError(error.message);
@@ -35,21 +28,14 @@ const Data = () => {
     getDataHandler();
   }, []);
 
-  async function addHandler(data) {
+  const addHandler = async (data) => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_KEY}.json`, {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      await response.json();
+      await ApiService.httpPost(data);
       getDataHandler();
     } catch (error) {
       setError(error.message);
     }
-  }
+  };
 
   return (
     <>
