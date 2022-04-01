@@ -17,7 +17,7 @@
     display: flex;
     flex-direction: column;
     border-radius: base.$border-small;
-    box-shadow: 5px 5px 10px rgb(80, 79, 79);
+    box-shadow: base.$box-shadow;
 
     @media (max-width: 992px) {
       width: auto;
@@ -41,16 +41,16 @@
     button {
       background: base.$primary-dark-blue;
       border-radius: base.$border-big;
-      border: 1px solid #000;
+      border: 1px solid base.$black;
       padding: 10px;
-      color: #000;
-      transition: all .3s linear;
+      color: base.$black;
+      transition: base.$transition-standard;
 
       &:hover {
         cursor: pointer;
         background: base.$primary-hover-blue;
-        border: 1px solid #fff;
-        color: #fff;
+        border: 1px solid base.$white;
+        color: base.$white;
       }
     }
   }

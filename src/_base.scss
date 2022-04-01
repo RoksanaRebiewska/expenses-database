@@ -11,9 +11,14 @@ $grey-dark: rgb(4, 4, 26);
 $grey-light: rgb(80, 79, 79);
 $red: rgb(255, 0, 0);
 $red-dark: rgb(124, 11, 11);
+$black: rgb(0,0,0);
 $white: rgb(255, 255, 255);
 
 //borders
 $border-big: 20px;
 $border-small: 10px;
 $border-circle: 50%;
+
+//others
+$box-shadow: 5px 5px 10px $grey-light;
+$transition-standard: all .3s linear;

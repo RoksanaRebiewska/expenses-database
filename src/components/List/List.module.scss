@@ -12,7 +12,7 @@
     margin: 20px auto;
     background: linear-gradient(45deg, base.$primary-mid-blue, base.$primary-light-blue);
     border-radius: base.$border-small;
-    box-shadow: 5px 5px 10px base.$grey-light;
+    box-shadow: base.$box-shadow;
     padding: 20px;
 
     @media (max-width: 992px) {

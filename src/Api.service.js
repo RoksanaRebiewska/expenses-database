@@ -41,7 +41,7 @@ const httpPost = async (data) => {
   try {
     const response = await fetch(`${config.api}.json`, {
       method: 'POST',
-      body: JSON.stringify(data),
+      body: data ? JSON.stringify(data) : null,
       ...config.options,
     });
     await response.json();
@@ -51,10 +51,14 @@ const httpPost = async (data) => {
 };
 
 const httpDelete = async (id) => {
-  await fetch(`${config.api}/${id}.json`, {
-    method: 'DELETE',
-    ...config.options,
-  });
+  try {
+    await fetch(`${config.api}/${id}.json`, {
+      method: 'DELETE',
+      ...config.options,
+    });
+  } catch (error) {
+    throw Error(error);
+  }
 };
 
 export default { httpGet, httpPost, httpDelete };

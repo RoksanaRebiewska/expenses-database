@@ -14,7 +14,7 @@ li {
     border: none;
     background: base.$grey-dark;
     color:  base.$white;
-    transition: all .3s linear;
+    transition: base.$transition-standard;
 
     &:hover {
       cursor: pointer;
