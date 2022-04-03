@@ -1,9 +1,10 @@
 @use '../../base';
+@use '../../media';
 
 .add_expense__container {
   margin: 0 50px;
 
-  @media (max-width: 992px) {
+  @include media.mobile {
       margin: 0 20px;
     }
 
@@ -19,7 +20,7 @@
     border-radius: base.$border-small;
     box-shadow: base.$box-shadow;
 
-    @media (max-width: 992px) {
+    @include media.mobile {
       width: auto;
     }
 
@@ -33,7 +34,7 @@
       box-sizing: border-box;
       font-family: base.$primary-font;
     
-      @media (max-width: 992px) {
+      @include media.mobile {
           width: 200px;
         }
     }

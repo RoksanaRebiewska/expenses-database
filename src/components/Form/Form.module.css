@@ -1,7 +1,7 @@
 .add_expense__container {
   margin: 0 50px;
 }
-@media (max-width: 992px) {
+@media (max-width: 1023px) {
   .add_expense__container {
     margin: 0 20px;
   }
@@ -18,7 +18,7 @@
   border-radius: 10px;
   box-shadow: 5px 5px 10px #504f4f;
 }
-@media (max-width: 992px) {
+@media (max-width: 1023px) {
   .add_expense__container form {
     width: auto;
   }
@@ -33,7 +33,7 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
-@media (max-width: 992px) {
+@media (max-width: 1023px) {
   .add_expense__container form select, .add_expense__container form input, .add_expense__container form button {
     width: 200px;
   }

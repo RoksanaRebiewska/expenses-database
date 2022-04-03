@@ -1,9 +1,10 @@
 @use '../../base';
+@use '../../media';
 
 .expenses__container {
   padding: 0 50px;
 
-  @media (max-width: 992px) {
+  @include media.mobile {
       padding: 0 20px;
     }
 
@@ -15,7 +16,7 @@
     box-shadow: base.$box-shadow;
     padding: 20px;
 
-    @media (max-width: 992px) {
+    @include media.mobile {
       width: auto;
     }
   }
@@ -27,7 +28,7 @@
     display: flex;
     flex-direction: row;
 
-    @media (max-width: 992px) {
+    @include media.mobile {
         flex-direction: column;
         width: 200px;
         margin: auto;
@@ -38,7 +39,7 @@
       width: 200px;
       margin-right: 20px;
 
-      @media (max-width: 992px) {
+      @include media.mobile {
         margin-right: 0;
       }
     }

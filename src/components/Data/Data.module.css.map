@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["Data.module.scss"],"names":[],"mappings":"AAAA;EACE;;AAEA;EAHF;IAIM","file":"Data.module.css"}
+{"version":3,"sourceRoot":"","sources":["Data.module.scss","../../_media.scss"],"names":[],"mappings":"AAEA;EACE;;ACAA;EDDF;IAIM","file":"Data.module.css"}
